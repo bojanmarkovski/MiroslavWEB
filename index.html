@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Miroslav web page</title>
 	<link href="assets/style.css" rel="stylesheet">
 	<!-- <link href="assets/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
@@ -13,6 +15,15 @@
 	<script type="text/javascript" src="assets/slick/slick/slick.min.js"></script>
 	</head>
 <body>
+	<div class="loader">
+		<div class="lds-ring">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+	
 	<div class="logo-header">
 		<a href="index.html">
 			<img src="assets/images/logo.jpg">
@@ -44,6 +55,7 @@
 			<div class="navbar-menu" style="background-image: url(assets/images/menu-img.jpg);">
 				<ul>
 					<li class="active-menu"><a href="index.html"><span class="arrow-menu">> </span> <span> Почетна</span></a></li>
+					<li><a href="news.html"><span class="arrow-menu">> </span> <span class="active-menu-hover"> Актуелности</span></a></li>
 					<li><a href="diplomacy.html"><span class="arrow-menu">> </span> <span class="active-menu-hover"> Дипломатија</span></a></li>
 					<li><a href="Translation&Interpretation.html"><span class="arrow-menu">> </span> <span class="active-menu-hover"> Превод & толкување</span></a></li>
 					<li><a href="myPrincipleOfWork.html"><span class="arrow-menu">> </span> <span class="active-menu-hover"> Мојот принцип на работа</span></a></li>
@@ -96,23 +108,23 @@
 			</div>
 		</div>
 		<div class="section mg-t-140">
-			<div class="section-paragraph first">
+			<div class="section-paragraph first width-mob-100">
 				<h3>Мојата филозофија</h3>
 				<p>Се залагам за изнаоѓање на соодветни и секогаш изводливи решенија кои се резултат на јасна комуникација и плодна и доверлива соработка помеѓу мене и моите клиенти.</p>
 			</div>
-			<div class="section-first">
-				<img src="assets/images/business-partners.jpg">
-				<img src="assets/images/man-and-woman-shaking-hands-over-business-agreemen.jpg">
+			<div class="section-first width-mob-100">
+				<img class="width-mob-100" src="assets/images/business-partners.jpg">
+				<img class="d-none-mob" src="assets/images/man-and-woman-shaking-hands-over-business-agreemen.jpg">
 			</div>
 		</div>
 		<div class="section mg-t-100">
-			<div class="section-paragraph second">
+			<div class="section-paragraph second width-mob-100">
 				<h3>Персонални услуги</h3>
 				<p>Секое решение е индивидуално конципирано за вас – изготвено по мерка за да одговара на Вашите потреби. Без разлика дали се работи за превод, толкувачка или индивидуална услуга – тука сум да ги сослушам сите Ваши потреби како би можел да Ви понудам решение со кое ќе бидете задоволни.</p>
 			</div>
-			<div class="section-second">
-				<img src="assets/images/close-up-of-businesswoman-hands-signing-contract.jpg">
-				<img src="assets/images/tingey-injury-law-firm.jpg">
+			<div class="section-second width-mob-100">
+				<img class="width-mob-100" src="assets/images/close-up-of-businesswoman-hands-signing-contract.jpg">
+				<img class="d-none-mob"src="assets/images/tingey-injury-law-firm.jpg">
 			</div>
 		</div>
 		<div class="section-news index-page-news mg-t-50 pd-t-50">
@@ -206,6 +218,11 @@
 		</div>
 	</div>
 	<script type="text/javascript">
+		window.addEventListener("load", function() {
+		    const loader = document.querySelector(".loader");
+		    loader.className += " hidden";
+		});
+
 		$(document).ready(function(){
 			$(".slider-container").slideDown(1000);
 			$(".slider-text-box").animate(
