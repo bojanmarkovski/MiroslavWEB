@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Контакт</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="assets/style.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -11,43 +12,58 @@
 	<script type="text/javascript" src="assets/slick/slick/slick.min.js"></script>
 	<!-- <link href="assets/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
 
-	</head>
+</head>
 <body>
-	<div class="logo-header">
+	<div class="loader">
+		<div class="lds-ring">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+	
+	<div class="logo-header d-none-mob">
 		<a href="index.html">
 			<img src="assets/images/logo.jpg">
 		</a>
 	</div>
 	<div class="menu-header navigation">
-		<div id="menuToggle" class="hamburger-menu-header">
+		<div id="menuToggle" class="hamburger-menu-header hovicon effect-3 sub-b">
 			<input type="checkbox" />
 			<div class="first"></div>
 			<div class="second"></div>
 			<div class="third"></div>
 		</div>
-		<div class="social-header-menu">
+		<div class="social-header-menu d-none-mob">
 			<i class="fab fa-instagram fa-2x"></i>
+		</div>
+		<div class="logo-header d-block-mob">
+			<a href="index.html">
+				<img src="assets/images/logo.jpg">
+			</a>
 		</div>
 	</div>
 	
 	<div class="main-container contact">
 		<div class="navbar">
-			<div class="navbar-contact">
+			<div class="navbar-contact d-none-mob">
 				<div class="contact-menu">
-					<p><a href="">ул. 2 бр.74А, нас Визбегово,  </a></p>
+					<p><a href="">ул. 2 бр.74А, нас Визбегово</a></p>
 					<p><a href="">1010 Скопје, Македонија</a></p>
+					<br>
 					<p>Т : <a href="">00389 2 261 0970</a></p>
-					<p>@ : <a href="">contact[at]miroslav-bozic.com</a></p>
+					<p>@ : <a href="">contact@miroslav-bozic.com</a></p>
 				</div>
 			</div>
 			<div class="navbar-menu" style="background-image: url(assets/images/menu-img.jpg);">
 				<ul>
-					<li><a href="index.html"><span>></span> Почетна</a></li>
-					<li><a href="news.html"><span>></span> Актуелности</a></li>
-					<li><a href="diplomacy.html"><span>></span> Дипломатија</a></li>
-					<li><a href="Translation&Interpretation.html"><span>></span> Превод & толкување </a></li>
-					<li><a href="myPrincipleOfWork.html"><span>></span> Мојот принцип на работа</a></li>
-					<li><a href="contact.html"><span>></span> Контакт</a></li>
+					<li><a href="index.html"><span class="arrow-menu">> </span> <span> Почетна</span></a></li>
+					<li><a href="news.html"><span class="arrow-menu">> </span> <span class="active-menu-hover"> Актуелности</span></a></li>
+					<li><a href="diplomacy.html"><span class="arrow-menu">> </span> <span class="active-menu-hover"> Дипломатија</span></a></li>
+					<li><a href="Translation&Interpretation.html"><span class="arrow-menu">> </span> <span class="active-menu-hover"> Превод & толкување</span></a></li>
+					<li><a href="myPrincipleOfWork.html"><span class="arrow-menu">> </span> <span class="active-menu-hover"> Мојот принцип на работа</span></a></li>
+					<li class="active-menu"><a href="contact.html"><span class="arrow-menu">> </span> <span class="active-menu-hover">Контакт</span></a></li>
 				</ul>
 				<div class="pravna-pouka">
 					<span><a href="legalNotice.html">Правна поука</a></span>
@@ -189,6 +205,11 @@
 		</div>
 	</div>
 	<script type="text/javascript">
+		window.addEventListener("load", function() {
+		    const loader = document.querySelector(".loader");
+		    loader.className += " hidden";
+		});
+
 		$(document).ready(function(){
 			$(".hamburger-menu-header").on('click', function(){
 				if($(".navbar").hasClass("show")){

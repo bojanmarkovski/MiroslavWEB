@@ -199,6 +199,9 @@ i:hover{
 	justify-content: space-around;
 	width: 150px;
 }
+.logo-header.d-block-mob{
+	display: none;
+}
 .logo-header img{
 	width: 75px;
 	height: 75px;
@@ -228,7 +231,7 @@ i:hover{
     height: 32px;
     border-radius: 50%;
     background: black;
-    transition: 0.4s;
+	transition: 0.4s;
 }
 .hamburger-menu-header:hover{
 	transform: translateX(-48%) scale(1.1);
@@ -379,7 +382,7 @@ i:hover{
 }
 .navbar .contact-menu{
 	position: absolute;
-    left: 100vw;
+    left: 100%;
 }
 .contact-menu p{
 	font-size: 18px;
@@ -545,16 +548,18 @@ i:hover{
 .slick-prev:before{
 	font-size: 75px !important;
 	opacity: 1 !important;
+	color: black !important;
 }
 .slick-next{
-	right: 50px !important;
+	right: -50px !important;
+	z-index: 5 !important;
 }
 .slick-next:hover{
 	transform: translate(0, -50%) scale(1.1);
 	transition: 0.2s;
 }
 .slick-prev{
-	left: 20px !important;
+	display: none !important;
 }
 .slick-prev:hover{
 	transform: translate(0, -50%) scale(1.1);
@@ -722,12 +727,12 @@ i:hover{
 .left-col {
 	float: left;
     width: 43%;
-    padding: 50px 0 0px 0;
+    padding: 0px;
 }
 .right-col {
 	float: left;
     width: 43%;
-    padding: 50px 0 0px 0;
+    padding: 0px;
 }
 .news-box li {
 	display: block;
@@ -896,6 +901,7 @@ i:hover{
 	text-align: left;
 	font-size: 19px !important;
 	font-family: Montserrat-Regular !important;
+	width: 100%;
 }
 .myPrincipleOfWork .panel-heading p{
     border: 1px solid black;
@@ -1108,6 +1114,18 @@ text-area:focus{
 
 /* Media query */
 
+@media screen and (max-width: 1100px) {
+	.contact .section-news section{
+		flex-direction: column;
+	}
+	.contact .section-news section div{
+		width: 100%;
+	}
+	.contact div form div.flex50{
+		flex-direction: column;
+	}
+}
+
 @media screen and (max-width: 1024px) {
 	.navbar .navbar-contact div{
 		padding-left: 20px;
@@ -1155,22 +1173,183 @@ text-area:focus{
 	}
 }
 
-@media screen and (max-width: 768px) {
-	.slider-text-box{
-		position: relative !important;
+@media screen and (max-width: 900px) {
+	.pd-15-140{
+		padding: 15px 25px !important;
 	}
-	.section.mg-t-100,
-	.section.mg-t-140{
-		flex-direction: column;
+	.main-container .main-slider,
+	.main-container .main-slider img{
+		height: auto;
+	}
+	.text-container h4{
+		margin-top: 0px;
 	}
 	.width-mob-100{
 		width: 100% !important;
 		margin: 0 auto !important;
 	}
+	.slick-next.slick-arrow{
+		display: none !important;
+	}
+	.mg-t-140{
+		margin-top: 0px;
+	}
+	.mg-t-100{
+		margin-top: 20px;
+	}
+	.mg-t-50{
+		margin-top: 0px;
+	}
+	.pd-t-25{
+		padding-top: 0px !important;
+	}
+	.slider-text-box{
+		position: relative !important;
+	}
+	.slider-text-box p{
+		padding: 0px 25px 50px 25px;
+	}
+	.section.mg-t-100,
+	.section.mg-t-140{
+		flex-direction: column;
+	}
 	.d-none-mob{
 		display: none !important;
 	}
-	.section .section-paragraph.first{
+	.section .section-paragraph.first,
+	.section .section-paragraph.second{
 		padding: 0;
+	}
+	.p0p25{
+		padding: 0px 25px;
+	}
+	.main-page .news-box{
+		flex-direction: column;
+		height: auto;
+	}
+	.navbar .navbar-menu ul li{
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+	.main-page .news-box div{
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	.section-news {
+		padding: 25px 25px;
+	}
+	.news-box h4.news-caption{
+		top: auto;
+		bottom: 0%;
+		transform: translate(-50%, 0%);
+		width: calc(100% - 30px);
+	}
+	.section-story {
+		padding: 15px 25px;
+	}
+	.section-story div div{
+		flex-direction: column;
+	}
+	.section-story div div img:nth-child(1){
+		margin-bottom: 20px !important;
+	}
+	.footer div{
+		padding: 30px 25px 100px 25px;
+	}
+	.translation-interpretation .section-news .section-box,
+	.diplomacy .d-flex{
+		flex-direction: column;
+	}
+	.news-once .section-news{
+		flex-direction: column;
+	}
+	.news-once .section-news div{
+		width: 100%;
+	}
+
+	/* NAVBAR */
+	.menu-header .hamburger-menu-header{
+		left: auto;
+		right: 30px;
+		transform: translateX(0%);
+	}
+	.menu-header{
+		width: 100%;
+		height: 80px;
+		z-index: 100;
+		top: 0;
+	}
+	.logo-header img{
+		width: 50px;
+    	height: 50px;
+	}
+	.logo-header.d-block-mob{
+		position: absolute;
+		top: 50%;
+		height: auto;
+		transform: translateY(-50%);
+		width: 100px;
+		z-index: 101;
+		display: block;
+		left: 25px;
+	}
+	.main-container{
+		margin: 0 auto;
+		margin-top: 80px;
+	}
+	.navbar,
+	.navbar .navbar-menu{
+		width: 100%;
+	}
+	.navbar .navbar-languages {
+		top: 10px;
+		bottom: auto;
+	}
+	.pravna-pouka{
+		bottom: 90px;
+	}
+	.arrow-back{
+		padding-left: 25px;
+    	padding-top: 20px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.section-news .news-box{
+		flex-direction: column;
+	}
+	.right-col,
+	.left-col{
+		width: 100%;
+	}
+	.myPrincipleOfWork .section-box .panel-body section img{
+		display: block;
+		float: unset;
+		margin-left: 0px;
+		width: 100%;
+		height: 300px;
+		margin-top: 20px;
+	}
+	.news-box li{
+		margin-bottom: 60px;
+	}
+	.news-box a img{
+		height: 300px;
+	}
+	.slider-text-box h4{
+		padding: 50px 25px 0px 25px;
+	}
+	.myPrincipleOfWork .hight800{
+		height: auto;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.navbar .navbar-menu ul li span.arrow-menu {
+		padding-right: 15px;
+	}
+	.navbar .navbar-menu ul li{
+		padding-left: 20px;
+		padding-right: 20px;
 	}
 }

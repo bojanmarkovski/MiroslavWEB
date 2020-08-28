@@ -24,7 +24,7 @@
 		</div>
 	</div>
 	
-	<div class="logo-header">
+	<div class="logo-header d-none-mob">
 		<a href="index.html">
 			<img src="assets/images/logo.jpg">
 		</a>
@@ -36,20 +36,25 @@
 			<div class="second"></div>
 			<div class="third"></div>
 		</div>
-		<div class="social-header-menu">
+		<div class="social-header-menu d-none-mob">
 			<i class="fab fa-instagram fa-2x"></i>
+		</div>
+		<div class="logo-header d-block-mob">
+			<a href="index.html">
+				<img src="assets/images/logo.jpg">
+			</a>
 		</div>
 	</div>
 	
 	<div class="main-container main-page">
 		<div class="navbar">
-			<div class="navbar-contact">
+			<div class="navbar-contact d-none-mob">
 				<div class="contact-menu">
 					<p><a href="">ул. 2 бр.74А, нас Визбегово</a></p>
 					<p><a href="">1010 Скопје, Македонија</a></p>
 					<br>
 					<p>Т : <a href="">00389 2 261 0970</a></p>
-					<p>@ : <a href="">contact[at]miroslav-bozic.com</a></p>
+					<p>@ : <a href="">contact@miroslav-bozic.com</a></p>
 				</div>
 			</div>
 			<div class="navbar-menu" style="background-image: url(assets/images/menu-img.jpg);">
@@ -87,19 +92,19 @@
 			</div>
 			
 			<div class="text-container">
-				<div class="slider-text-box slider-text-box-0">
+				<div class="slider-text-box slider-text-box-0 width-mob-100">
 					<h4>Уникатен соговорник</h4>
 					<p>
 						Дипломат и лингвист со срце и душа кој нуди квалитетно решение за сите Ваши потреби и предвидени проекти. Од конципирањето до реализацијата, Ве придружувам, чекор по чекор, низ целиот Ваш проект и се грижам за Вашите потреби и проекти како да се мои.
 					</p>
 				</div>
-				<div class="slider-text-box slider-text-box-1">
+				<div class="slider-text-box slider-text-box-1 d-none-mob">
 					<h4>Уникатен соговорник</h4>
 					<p>
 						Дипломат и лингвист со срце и душа кој нуди квалитетно решение за сите Ваши потреби и предвидени проекти. Од конципирањето до реализацијата, Ве придружувам, чекор по чекор, низ целиот Ваш проект и се грижам за Вашите потреби и проекти како да се мои.
 					</p>
 				</div>
-				<div class="slider-text-box slider-text-box-2">
+				<div class="slider-text-box slider-text-box-2 d-none-mob">
 					<h4>Уникатен соговорник</h4>
 					<p>
 						Дипломат и лингвист со срце и душа кој нуди квалитетно решение за сите Ваши потреби и предвидени проекти. Од конципирањето до реализацијата, Ве придружувам, чекор по чекор, низ целиот Ваш проект и се грижам за Вашите потреби и проекти како да се мои.
@@ -109,8 +114,8 @@
 		</div>
 		<div class="section mg-t-140">
 			<div class="section-paragraph first width-mob-100">
-				<h3>Мојата филозофија</h3>
-				<p>Се залагам за изнаоѓање на соодветни и секогаш изводливи решенија кои се резултат на јасна комуникација и плодна и доверлива соработка помеѓу мене и моите клиенти.</p>
+				<h3 class="p0p25">Мојата филозофија</h3>
+				<p class="p0p25">Се залагам за изнаоѓање на соодветни и секогаш изводливи решенија кои се резултат на јасна комуникација и плодна и доверлива соработка помеѓу мене и моите клиенти.</p>
 			</div>
 			<div class="section-first width-mob-100">
 				<img class="width-mob-100" src="assets/images/business-partners.jpg">
@@ -119,8 +124,8 @@
 		</div>
 		<div class="section mg-t-100">
 			<div class="section-paragraph second width-mob-100">
-				<h3>Персонални услуги</h3>
-				<p>Секое решение е индивидуално конципирано за вас – изготвено по мерка за да одговара на Вашите потреби. Без разлика дали се работи за превод, толкувачка или индивидуална услуга – тука сум да ги сослушам сите Ваши потреби како би можел да Ви понудам решение со кое ќе бидете задоволни.</p>
+				<h3 class="p0p25">Персонални услуги</h3>
+				<p class="p0p25">Секое решение е индивидуално конципирано за вас – изготвено по мерка за да одговара на Вашите потреби. Без разлика дали се работи за превод, толкувачка или индивидуална услуга – тука сум да ги сослушам сите Ваши потреби како би можел да Ви понудам решение со кое ќе бидете задоволни.</p>
 			</div>
 			<div class="section-second width-mob-100">
 				<img class="width-mob-100" src="assets/images/close-up-of-businesswoman-hands-signing-contract.jpg">
@@ -171,8 +176,8 @@
 				</p>
 				<br>
 				<div>
-					<img src="assets/images/LERIN.jpg">
-					<img src="assets/images/MINHEN 3.jpg">
+					<img class="width-mob-100" src="assets/images/LERIN.jpg">
+					<img class="width-mob-100" src="assets/images/MINHEN 3.jpg">
 				</div>
 				<div class="mg-bt-30"></div>
 				<p>
@@ -224,12 +229,18 @@
 		});
 
 		$(document).ready(function(){
-			$(".slider-container").slideDown(1000);
-			$(".slider-text-box").animate(
-				{bottom: '-60px',
-				opacity: "0.9"},
-				{duration: 2000}
-			);
+			if ($(window).width() > 900) {
+				$(".slider-container").slideDown(1000);
+				$(".slider-text-box").animate(
+					{bottom: '-60px',
+					opacity: "0.9"},
+					{duration: 2000}
+				);
+			} else {
+				$(".slider-container").css("display", "block");
+				$(".slider-text-box").css("display", "block").css("opacity", "1").css("bottom", "0");;
+			}
+			
 			$(".hamburger-menu-header").on('click', function(){
 				if($(".navbar").hasClass("show")){
 					// HIDE
@@ -239,7 +250,7 @@
 						{top: '130vh'},
 						{duration: 100}
 					);
-
+					$(".menu-header").css("z-index", "4")
 					$(".navbar .contact-menu").animate(
 						{left: '100vw'},
 						{duration: 100}
@@ -248,13 +259,21 @@
 					$(".navbar").removeClass("show");
 				} else{
 					// SHOW
+					if ($(window).width() > 900) {
+						$(".navbar-menu ul").animate(
+							{top: '47%'},
+							{duration: 700}
+						);
+						$(".menu-header").css("z-index", "99");
+					} else {
+						$(".navbar-menu ul").animate(
+							{top: '40%'},
+							{duration: 700}
+						);
+					} 
+
 					$("#menuToggle").css("background","#CB9C8B");
 					$(".navbar").css("display", "flex");
-					$(".navbar-menu ul").animate(
-						{top: '47%'},
-						{duration: 700}
-					);
-
 					$(".navbar .contact-menu").animate(
 						{left: '0vw'},
 						{duration: 700}
@@ -269,7 +288,13 @@
 			  	speed: 300,
 			  	slidesToShow: 1,
 			  	adaptiveHeight: true,
-			  	arrows: true
+			  	arrows: true,
+				responsive: [
+					{
+						breakpoint: 900,
+						settings: "unslick"
+					}
+				]
 			});
 			
 			$('.main-slider').on({
