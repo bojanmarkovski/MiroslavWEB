@@ -29,7 +29,7 @@
 	width: 64px;
 	height: 64px;
 	margin: 8px;
-	border: 8px solid #fff;
+	border: 5px solid #fff;
 	border-radius: 50%;
 	animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
 	border-color: #302A35 transparent transparent transparent;
@@ -722,21 +722,54 @@ i:hover{
 .news .section-news .news-box div img{
 	height: auto;
 }
-
 /* START Aktuelnosti list */
 .left-col {
 	float: left;
-    width: 43%;
+    width: 45%;
     padding: 0px;
 }
 .right-col {
 	float: left;
-    width: 43%;
+    width: 45%;
     padding: 0px;
 }
 .news-box li {
 	display: block;
-    margin-bottom: 80px;
+	margin-bottom: 80px;
+	transition: 0.4s;
+}
+.news-box .left-col li:nth-child(odd) img{
+	height: 500px;
+}
+.news-box .left-col li:nth-child(even) img{
+	height: 350px;
+}
+.news-box .right-col li:nth-child(even) img{
+	height: 500px;
+}
+.news-box .right-col li:nth-child(odd) img{
+	height: 350px;
+}
+/* EFECT ON NEWS */
+.news-box li:hover{
+	background: white;
+	padding: 10px;
+	transition: 0.4s;
+}
+.news-box li:hover span span{
+	background:#302A35;
+	color: white;
+	transition: 0.2s;
+}
+.news-box li span span{
+	transition: 0.2s;
+}
+.news-box li:hover img{
+	transform: scale(1.2);
+	transition: 0.4s;
+}
+.news-box li img{
+	transition: 0.4s;
 }
 .news-box a {
 	display: block;
@@ -809,7 +842,8 @@ i:hover{
 }
 .news-once .section-news div img{
 	width: 90%;
-	height: 400px
+	height: 400px;
+	box-shadow: 10px 20px 20px #0000002F;
 }
 .news-once .section-news div img:nth-child(2){
 	position: absolute;
@@ -868,6 +902,7 @@ i:hover{
 }
 .diplomacy .section-diplomacy img{
 	height: 100%;
+	box-shadow: 10px 20px 20px #0000002F;
 }
 .diplomacy .section-diplomacy .d-flex .diplomacy-img-2{
 	width: 62%;
@@ -1183,6 +1218,9 @@ text-area:focus{
 	}
 	.text-container h4{
 		margin-top: 0px;
+	}
+	.slider-text-box h4{
+		padding: 50px 250px 0px 25px;
 	}
 	.width-mob-100{
 		width: 100% !important;
