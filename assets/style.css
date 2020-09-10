@@ -435,7 +435,8 @@ i:hover{
 	padding-left: 50px;
 }
 
-.navbar .navbar-menu ul li span.active-menu-hover::after{
+.navbar .navbar-menu ul li span.active-menu-hover::after,
+.pravna-pouka span::after{
 	content: '';
     display: block;
     width: 0;
@@ -444,7 +445,8 @@ i:hover{
 	transition: width .4s;
 	margin-top: 4px;
 }
-.navbar .navbar-menu ul li span.active-menu-hover:hover::after{
+.navbar .navbar-menu ul li span.active-menu-hover:hover::after,
+.pravna-pouka span:hover::after{
 	width: 100%;
 	transition: 0.4s;
 }
@@ -511,6 +513,9 @@ i:hover{
 	bottom: 10px;
 	color: #ffffff;
 	margin-left: 40px;
+}
+.pravna-pouka p{
+	margin-bottom: 10px;
 }
 
 /*FOOTER*/
@@ -763,15 +768,35 @@ i:hover{
 }
 .news-box .left-col li:nth-child(odd) img{
 	height: 500px;
+	transition: 0.4s;
+}
+.news-box .left-col li:nth-child(odd):hover img{
+	height: 480px;
+	transition: 0.4s;
 }
 .news-box .left-col li:nth-child(even) img{
 	height: 350px;
+	transition: 0.4s;
+}
+.news-box .left-col li:nth-child(even):hover img{
+	height: 330px;
+	transition: 0.4s;
 }
 .news-box .right-col li:nth-child(even) img{
 	height: 500px;
+	transition: 0.4s;
+}
+.news-box .right-col li:nth-child(even):hover img{
+	height: 480px;
+	transition: 0.4s;
 }
 .news-box .right-col li:nth-child(odd) img{
 	height: 350px;
+	transition: 0.4s;
+}
+.news-box .right-col li:nth-child(odd):hover img{
+	height: 330px;
+	transition: 0.4s;
 }
 /* EFECT ON NEWS */
 .news-box li:hover{
@@ -815,8 +840,13 @@ i:hover{
 	display: inline-block;
     position: absolute;
     z-index: 80;
-    bottom: -30px;
-    left: 0;
+    bottom: -60px;
+	left: 0;
+	transition: 0.4s;
+}
+.news-box li:hover .desc{
+	margin: -10px;
+	transition: 0.4s;
 }
 .news-box a .desc .title {
 	text-transform: uppercase;
@@ -827,7 +857,8 @@ i:hover{
 }
 .news-box a .desc span {
 	background-color: #fff;
-    padding: 22px 27px;
+	padding: 15px 15px;
+    width: 70%;
     color: #3f3f3f;
     display: block;
 }
@@ -852,7 +883,10 @@ i:hover{
 	font-size: 30px;
 	font-weight: bolder;
 	padding: 30px 140px 0px 140px;
-	color: black;
+	color: black !important;
+}
+.arrow-back a{
+	color: black !important;
 }
 .news-once .section-news{
 	display: flex;
@@ -1117,6 +1151,10 @@ form input{
 	margin-top: 3px;
 	padding-left: 10px;
 }
+.button-wrapper input:hover ~ span{
+	background: rgba(255,255,255,0.5);
+	transition: 0.4s;
+}
 
 #upload {
     display: inline-block;
@@ -1130,6 +1168,9 @@ form input{
     cursor: pointer;
 }
 /*SUBMIT BUTTON*/
+.button-submit-container{
+	position: relative;
+}
 .submit-button{
 	margin-top: 27px;
 	text-align: left;
@@ -1141,7 +1182,22 @@ form input{
 	color: #212139;
 	height: 41px;
 	width: 100%;
-	padding-left: 15px;
+	padding-left: 35px;
+	transition: 0.4s;
+	cursor: pointer;
+}
+.button-submit-container:hover .arrow-right-button{
+	left: 20px;
+	cursor: pointer;
+	transition: 0.4s;
+}
+.arrow-right-button{
+	position: absolute;
+	top: 36px;
+	left: 10px;
+	font-size: 18px;
+	transition: 0.4s;
+
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -1167,6 +1223,12 @@ text-area:focus{
 .slider-text-box h4 {
     font-size: 30px;
 }
+.contact input:hover,
+.contact select:hover,
+.contact textarea:hover{
+	background: rgba(255,255,255,0.5);
+	transition: 0.4s;
+}
 
 /* JS CSS */
 
@@ -1174,6 +1236,15 @@ text-area:focus{
 	bottom: -100vh;
 	opacity: 0;
 
+}
+#curtain{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: white;
+	top: 0;
+	left: 0;
+	z-index: 9;
 }
 
 /* Media query */
@@ -1379,6 +1450,9 @@ text-area:focus{
 		padding-left: 25px;
     	padding-top: 20px;
 	}
+	#curtain{
+		display: none;
+	}
 }
 
 @media screen and (max-width: 768px) {
@@ -1421,12 +1495,31 @@ text-area:focus{
 	}
 }
 
-#curtain{
+.section-story p a,
+.section-diplomacy p a,
+.panel-body p a{
+	display: inline-block;
+	position: relative;
+	text-decoration: none;
+	padding: 0px 0;
+	color: #212139;
+}
+.section-story p a:after,
+.section-diplomacy p a:after,
+.panel-body p a:after {
+	content: '';
 	position: absolute;
-	width: 100%;
-	height: 100%;
-	background: white;
-	top: 0;
+	bottom: 0;
 	left: 0;
-	z-index: 9;
+	right: 0;
+	width: 100%;
+	height: 2px;
+	transform: scaleX(0);
+	background-color: #212139;
+	transition: transform 0.3s;
+}
+.section-story p a:hover:after,
+.section-diplomacy p a:hover:after,
+.panel-body p a:hover:after {
+	transform: scaleX(1);
 }
